@@ -22,10 +22,37 @@ export class ApgDirHomeResource extends Drash.Resource {
                 toolbar: "",
                 released: "2022/30/10"
             },
-            links: [
+            menu: [
                 {
-                    href: "/basic",
-                    caption: "Basic"
+                    href: "https://apg-cdn.deno.dev/",
+                    caption: "Cdn",
+                    description: "A personal content delivery network on deno deploy with simple cache management."
+                },
+                {
+                    href: "https://apg-tng.deno.dev/",
+                    caption: "Tng",
+                    description: "A template engine to produce static Server Side Rendered Html."
+                },
+                {
+                    href: "",
+                    caption: "Dhe",
+                    description: "A component style engine to produce static Server Side Rendered Html."
+                },
+                {
+                    href: "",
+                    caption: "Lgr",
+                    description: "A series of tools to manage logging and performance measurements using Deno."
+                },
+                {
+                    href: "",
+                    caption: "Mng",
+                    description: "A series of tools to manage Mongo DB connections and operations."
+                }
+                ,
+                {
+                    href: "",
+                    caption: "Jsv",
+                    description: "A series of tools gor Json validation through Json schemas."
                 }
             ],
         };
