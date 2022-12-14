@@ -26,33 +26,51 @@ export class ApgDirHomeResource extends Drash.Resource {
                 {
                     href: "https://apg-cdn.deno.dev/",
                     caption: "Cdn",
-                    description: "A personal content delivery network on deno deploy with simple cache management."
+                    description: "A personal content delivery network on deno deploy with simple cache management.",
+                    released: "2022/10"
                 },
                 {
                     href: "https://apg-tng.deno.dev/",
                     caption: "Tng",
-                    description: "A template engine to produce static Server Side Rendered Html."
+                    description: "A template engine to produce static Server Side Rendered Html.",
+                    released: "2022/10"
+                },
+                {
+                    href: "https://apg-tst.deno.dev/",
+                    caption: "Tst",
+                    description: "A web service useful to browse ApgUtsSpecable tests.",
+                    released: "2022/12"
+                },
+                {
+                    href: "https://apg-cad.deno.dev/",
+                    caption: "Cad",
+                    description: "A minimalistic 2D cad engine to produce Server Side Rendered SVG and DXF drawings .",
+                    released: "2022/12"
                 },
                 {
                     href: "",
                     caption: "Dhe",
-                    description: "A component style engine to produce static Server Side Rendered Html."
+                    description: "A component style engine to produce static Server Side Rendered Html.",
+                    released: ""
                 },
                 {
                     href: "",
                     caption: "Lgr",
-                    description: "A series of tools to manage logging and performance measurements using Deno."
+                    description: "A series of tools to manage logging and performance measurements using Deno.",
+                    released: ""
                 },
                 {
                     href: "",
                     caption: "Mng",
-                    description: "A series of tools to manage Mongo DB connections and operations."
+                    description: "A series of tools to manage Mongo DB connections and operations.",
+                    released: ""
                 }
                 ,
                 {
                     href: "",
                     caption: "Jsv",
-                    description: "A series of tools gor Json validation through Json schemas."
+                    description: "A series of tools gor Json validation through Json schemas.",
+                    released: ""
                 }
             ],
         };
