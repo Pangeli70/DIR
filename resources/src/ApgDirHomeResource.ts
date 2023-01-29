@@ -48,6 +48,12 @@ export class ApgDirHomeResource extends Drash.Resource {
                     released: "2022/12"
                 },
                 {
+                    href: "https://apg-cii.deno.dev/",
+                    caption: "Cii",
+                    description: "A Cad Instructions Interpreter that uses as 2D cad engine to produce Server Side Rendered SVG and DXF drawings .",
+                    released: "2022/12"
+                },
+                {
                     href: "",
                     caption: "Dhe",
                     description: "A component style engine to produce static Server Side Rendered Html.",
