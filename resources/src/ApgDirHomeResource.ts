@@ -15,10 +15,10 @@ export class ApgDirHomeResource extends Drash.Resource {
         const templateData = {
             site: {
                 name: "Apg-Dir",
-                title: "Directory of the Apg services"
+                title: "Apg microservices services on Deno Deploy"
             },
             page: {
-                title: "Home",
+                title: "Dicerctory",
                 toolbar: "",
                 released: "2022/30/10"
             },
