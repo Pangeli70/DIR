@@ -13,7 +13,7 @@ export class ApgDirHomeResource extends Drash.Resource {
     public async GET(_request: Drash.Request, response: Drash.Response) {
 
         const templateData = {
-            site: { 
+            site: {
                 name: "Apg-Dir",
                 title: "Directory of the Apg services"
             },
@@ -50,30 +50,29 @@ export class ApgDirHomeResource extends Drash.Resource {
                 {
                     href: "https://apg-cii.deno.dev/",
                     caption: "Cii",
-                    description: "A Cad Instructions Interpreter that uses as 2D cad engine to produce Server Side Rendered SVG and DXF drawings .",
-                    released: "2022/12"
+                    description: "A Cad Instructions Interpreter that uses a headless 2D cad to produce SVG and DXF drawings .",
+                    released: "2023/01"
                 },
                 {
-                    href: "",
+                    href: "/",
                     caption: "Dhe",
                     description: "A component style engine to produce static Server Side Rendered Html.",
                     released: ""
                 },
                 {
-                    href: "",
+                    href: "/",
                     caption: "Lgr",
                     description: "A series of tools to manage logging and performance measurements using Deno.",
                     released: ""
                 },
                 {
-                    href: "",
+                    href: "/",
                     caption: "Mng",
                     description: "A series of tools to manage Mongo DB connections and operations.",
                     released: ""
-                }
-                ,
+                },
                 {
-                    href: "",
+                    href: "/",
                     caption: "Jsv",
                     description: "A series of tools gor Json validation through Json schemas.",
                     released: ""

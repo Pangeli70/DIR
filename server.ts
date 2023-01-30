@@ -18,7 +18,9 @@ const SERVER_INFO: Uts.IApgUtsServerInfo = {
 Tng.ApgTngService.Init("./templates", "", {
   useCache: false,
   cacheChunksLongerThan: 100,
-  consoleLog: true
+  consoleLog: true,
+  beginMarkup: "<%",
+  endMarkup: "%>"
 });
 
 const server = new Drash.Server({
