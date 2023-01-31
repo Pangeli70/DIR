@@ -18,7 +18,7 @@ export class ApgDirHomeResource extends Drash.Resource {
                 title: "Apg microservices services on Deno Deploy"
             },
             page: {
-                title: "Dicerctory",
+                title: "Directory",
                 toolbar: "",
                 released: "2022/30/10"
             },
