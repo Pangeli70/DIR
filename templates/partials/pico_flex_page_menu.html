@@ -1,22 +1,46 @@
 <% for (const item of menu) { %>
-    <div style="display: flex; flex-flow: row; align-items: center;">
-        <div style="min-width: 20%;">
-            <h2 style="margin: 1rem;">
-                <% if( item.href !="" ){ %>
-                    <a href="<% item.href %>" role="button">
-                        <% item.caption %>
-                    </a>
-                <% } else { %>
-                    <% item.caption %>
-                <% } %>
-
-            </h2>
-        </div>
-        <div>
-            <p style="margin: 1rem;">
-                <% item.description %> [<% item.released %>]
-            </p>
-        </div>
-
+<div style="display: flex; flex-flow: row; align-items: center;">
+    <div style="min-width: 20%;">
+        <h2 style="margin: 1rem">
+        <% if( item.href != "" ){ %>
+            <a href="<% item.href %>" role="button" style="min-width: 8rem" target="_blank">
+                Apg-<% item.caption %>
+            </a>
+        <% } else { %>
+            APG-<% item.caption %>
+        <% } %>
+        </h2>
     </div>
-<% }%>
+    <div>
+        <details style="margin: 1rem;">
+            <summary>
+                <% item.title %>
+            </summary>
+            <p>
+                Released:&nbsp;<% item.released %>
+                </br>
+                Current version:&nbsp;<% item.version %>
+            </p>
+            <p>
+                <% item.module %> </br>
+                <a href="<% item.github %>" target="_blank">
+                    <% item.github %>
+                </a>
+            </p>
+            <p>
+                <% item.microservice %> </br>
+                <a href="<% item.href %>" target="_blank">
+                    <% item.href %>
+                </a>
+            </p>
+            <p>
+                Import in your deps.ts file using: </br>
+                <pre>
+                    <code>export * as&nbsp;<% item.caption %>&nbsp;from "<% item.import %>";</code>
+                </pre>
+            </p>
+        </details>
+    </div>
+
+</div>
+<% } %>

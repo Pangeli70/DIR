@@ -5,14 +5,15 @@
  * -----------------------------------------------------------------------
  */
 import { Drash, Uts, Tng } from "./deps.ts";
+import { ApgDirGetLocalPort, eApgDirEntries } from "./mod.ts";
 import { resources } from "./res.ts";
 import { services } from "./svcs.ts";
 
 const SERVER_INFO: Uts.IApgUtsServerInfo = {
   name: 'Apg-Dir',
   title: 'Directory of Apg',
-  subtitle: 'Explore the Apg services',
-  localPort: 49600
+  subtitle: 'Explore the Apg modules and microservices',
+  localPort: ApgDirGetLocalPort(eApgDirEntries.dir)
 }
 
 Tng.ApgTngService.Init("./templates", "", {
