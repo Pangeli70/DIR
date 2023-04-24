@@ -18,7 +18,7 @@ export class ApgDirHomeResource extends Drash.Resource {
 
         const templateData = {
             site: {
-                name: SERVER_INFO.name,
+                name: SERVER_INFO.caption,
                 title: SERVER_INFO.title
             },
             page: {

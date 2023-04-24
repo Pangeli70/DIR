@@ -2,12 +2,13 @@
 
 <br>
  
-Directory of the APG ecosystem: modules on Github and microservices on Deno deploy 
+Directory of the APG ecosystem of libraries 
 
 <br>
-<br>
 
-## Description 
+Modules on Github and microservices on Deno deploy 
+
+<br>
 
 <br>
 
@@ -21,7 +22,7 @@ Exposes the entities for the identification of modules and microservices.
 <br>
 
 ### Microservice 
-Produces a website that presents the list as a browsasable directory.
+Produces a website that presents the list as a browsable directory.
 > https://apg-dir.deno.dev/ 
 
 <br>
