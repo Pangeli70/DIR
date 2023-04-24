@@ -7,8 +7,9 @@
 
 
 /** Identification of the modules or microservices */
-export enum eApgDirEntries { 
-    none,
+export enum eApgDirEntriesIds { 
+    none = -1,
+    dir,
     uts,
     rst,
     tst,
@@ -20,7 +21,6 @@ export enum eApgDirEntries {
     dhe,
     edr,
     cdn,
-    dir,
     a2d,
     svg,
     cad,

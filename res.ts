@@ -14,6 +14,7 @@ export const resources: typeof Drash.Resource[] = [
     Edr.ApgEdrPublicBinFileResource,
 
     // Dir
-    res.ApgDirHomeResource
+    res.ApgDirHomeResource,
+    res.ApgDirMarkupResource
 
 ];

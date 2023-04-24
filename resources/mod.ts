@@ -4,3 +4,4 @@
  * -----------------------------------------------------------------------
  */
 export * from "./src/ApgDirHomeResource.ts";
+export * from "./src/ApgDirMarkupResource.ts";

@@ -8,7 +8,7 @@
 
 export * from "./src/data/ApgDirEntries.ts";
 
-export * from "./src/enums/eApgDirEntries.ts";
+export * from "./src/enums/eApgDirEntriesIds.ts";
 
 export * from "./src/functions/ApgDirFunctions.ts";
 

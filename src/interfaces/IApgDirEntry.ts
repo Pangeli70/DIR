@@ -5,27 +5,29 @@
  * -----------------------------------------------------------------------
  */
 
-/** Entry for the Apg's modules directory */
+/** Entry for the Apg ecosystem library directory */
 export interface IApgDirEntry { 
 
-    /** Acronym of the Module/Library*/
+    /** Identification number */
+    entry : number
+    /** Acronym of the library */
     caption: string;
-    /** Title of the module */
+    /** Title of the library */
     title: string;
+    /** Sub Title of the library */
+    subTitle?: string;
     /** Description of the module */
     module: string;
     /** Description of the microservice */
     microservice: string;
-    /** Github repository address*/
+    /** Github repository address of the library */
     github: string;
     /** Import string for the deps.ts file*/
     import: string;
-    /** Address of the example website (if available)*/
+    /** Address of the example or test website (if available)*/
     href: string;
     /** Date first release */
     released: string;
     /** Current semver */
     version: string;
-    /** Identification number */
-    entry : number
 }

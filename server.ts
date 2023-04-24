@@ -5,16 +5,13 @@
  * -----------------------------------------------------------------------
  */
 import { Drash, Uts, Tng } from "./deps.ts";
-import { ApgDirGetLocalPort, eApgDirEntries } from "./mod.ts";
+import { ApgDirGetServerInfo, eApgDirEntriesIds } from "./mod.ts";
 import { resources } from "./res.ts";
 import { services } from "./svcs.ts";
 
-const SERVER_INFO: Uts.IApgUtsServerInfo = {
-  name: 'Apg-Dir',
-  title: 'Directory of Apg',
-  subtitle: 'Explore the Apg modules and microservices',
-  localPort: ApgDirGetLocalPort(eApgDirEntries.dir)
-}
+
+const SERVER_INFO = ApgDirGetServerInfo(eApgDirEntriesIds.dir);
+
 
 Tng.ApgTngService.Init("./templates", "", {
   useCache: false,
@@ -23,6 +20,7 @@ Tng.ApgTngService.Init("./templates", "", {
   beginMarkup: "<%",
   endMarkup: "%>"
 });
+
 
 const server = new Drash.Server({
   hostname: '0.0.0.0',

@@ -1,69 +1,48 @@
-# APG-DIR
-<br>
-
-Directory of APG modules on Github and microservices on Deno deploy
+# Apg-Dir 
 
 <br>
+ 
+Directory of the APG ecosystem: modules on Github and microservices on Deno deploy 
+
+<br>
 <br>
 
-## Description
-<br>
-
-### Module
-<br>
-
-This TS module exposes the data for the identification of modules and microservices. 
-> https://github.com/Pangeli70/apg-dir
+## Description 
 
 <br>
 
-### Microservice
-<br>
-
-The Drash microservice associated to this module is published on Deno Deploy and presents the directory as a simple broswsable list.
-> https://apg-dir.deno.dev/
+### Module 
 
 <br>
 
-### First released
-> 2022/10
+Exposes the entities for the identification of modules and microservices.
+> https://github.com/Pangeli70/apg-dir 
 
 <br>
 
-### Current version:
-> 0.9.6
+### Microservice 
+Produces a website that presents the list as a browsasable directory.
+> https://apg-dir.deno.dev/ 
 
 <br>
 
-## Usage
+### First released 
+> 2022/10 
 
 <br>
 
-Import in deps.ts file using:
-```Typescript
-    export * as Dir from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts";
-```
+### Current version 
+> 0.9.6 
 
-The module exposes an enumeration for all the registered modules.
-```Typescript
-    Dir.eApgDirEntries
-```
+<br>
 
-To get a unique local port for a development server for any of the APG ecosystem modules.
+### Import in your deps.ts file 
+> https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts 
 
-```Typescript
-import { Dir, ... } from "./deps.ts";
-...
-const localPort = Dir.ApgDirGetLocalPort(Dir.eApgDirEntries.dir);
-...
-const server = new Drash.Server({
-    hostname: '0.0.0.0',
-    port: localPort,
-    resources: [...],
-    services: [...],
-    protocol: "http"
-});
-server.run();
-...
-```
+<br>
 
+## Usage 
+
+<br>
+
+> [Brief help](usage/usage.md)

@@ -5,11 +5,20 @@
  * -----------------------------------------------------------------------
  */
 
-import { eApgDirEntries } from "../enums/eApgDirEntries.ts";
+import { Uts } from "../../deps.ts";
+import { ApgDirEntries } from "../data/ApgDirEntries.ts";
+import { eApgDirEntriesIds } from "../enums/eApgDirEntriesIds.ts";
 
 const PORT_BASE = 49600;
 
-/** Get the number of the port for the developmet server based on the Dir entry */
-export function ApgDirGetLocalPort(aentry: eApgDirEntries) {
-    return PORT_BASE + aentry;
+/** Get the server info used for startup and resume of server */
+export function ApgDirGetServerInfo(aentryId: eApgDirEntriesIds) { 
+    const r: Uts.IApgUtsServerInfo = {
+        caption: ApgDirEntries[aentryId].caption,
+        title: ApgDirEntries[aentryId].title,
+        version: ApgDirEntries[aentryId].version,
+        localPort: PORT_BASE + aentryId
+    }
+
+    return r;
 }

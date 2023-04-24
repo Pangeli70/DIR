@@ -4,10 +4,10 @@
         <h2 style="margin: 1rem">
         <% if( item.href != "" ){ %>
             <a href="<% item.href %>" role="button" style="min-width: 8rem" target="_blank">
-                Apg-<% item.caption %>
+                <% item.caption %>
             </a>
         <% } else { %>
-            APG-<% item.caption %>
+            <% item.caption %>
         <% } %>
         </h2>
     </div>
@@ -16,6 +16,12 @@
             <summary>
                 <% item.title %>
             </summary>
+            <% if(item.subTitle !== undefined) { %>
+            <p>
+                <% item.subTitle %>
+            </p>
+            <% } %>
+
             <p>
                 Released:&nbsp;<% item.released %>
                 </br>
@@ -35,9 +41,17 @@
             </p>
             <p>
                 Import in your deps.ts file using: </br>
-                <pre>
-                    <code>export * as&nbsp;<% item.caption %>&nbsp;from "<% item.import %>";</code>
-                </pre>
+
+                    <pre>export * as&nbsp;<% item.caption.substring(4,7) %>&nbsp;from "<% item.import %>";</pre>
+
+            </p>
+            <p>
+                Get github file: </br>
+            
+                <a href="/markup/<% item.caption %>" target="_blank">
+                    readme.md
+                </a>
+            
             </p>
         </details>
     </div>

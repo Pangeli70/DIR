@@ -6,7 +6,7 @@
  * -----------------------------------------------------------------------
  */
 import { Drash, Tng } from "../../deps.ts";
-import { ApgDirEntries } from "../../mod.ts";
+import { ApgDirEntries, ApgDirGetServerInfo, eApgDirEntriesIds } from "../../mod.ts";
 
 export class ApgDirHomeResource extends Drash.Resource {
 
@@ -14,10 +14,12 @@ export class ApgDirHomeResource extends Drash.Resource {
 
     public async GET(_request: Drash.Request, response: Drash.Response) {
 
+        const SERVER_INFO = ApgDirGetServerInfo(eApgDirEntriesIds.dir);
+
         const templateData = {
             site: {
-                name: "Apg-Dir",
-                title: "Github Modules and Deno Deploy microservices"
+                name: SERVER_INFO.name,
+                title: SERVER_INFO.title
             },
             page: {
                 title: "Directory",
