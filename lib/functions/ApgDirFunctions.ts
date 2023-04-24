@@ -13,15 +13,14 @@ const PORT_BASE = 49600;
 
 /** Get the server info used for startup and resume of server */
 export function ApgDirGetServerInfo(
-    aentries: IApgDirEntry[],
-    aentryId: number,
+    aentry: IApgDirEntry,
     aportBase = PORT_BASE
 ) {
     const r: Uts.IApgUtsServerInfo = {
-        caption: aentries[aentryId].caption,
-        title: aentries[aentryId].title,
-        version: aentries[aentryId].version,
-        localPort: aportBase + aentryId
+        caption: aentry.caption,
+        title: aentry.title,
+        version: aentry.version,
+        localPort: aportBase + aentry.id
     }
 
     return r;

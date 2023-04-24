@@ -6,12 +6,12 @@
  * -----------------------------------------------------------------------
  */
 import { Drash, Uts, Tng } from "./srv/deps.ts";
-import { ApgDirGetServerInfo, eApgDirEntriesIds, ApgDirEntries } from "./lib/mod.ts";
+import { Dir} from "./mod.ts";
 import { resources } from "./srv/res.ts";
 import { services } from "./srv/svcs.ts";
 
 
-const SERVER_INFO = ApgDirGetServerInfo(ApgDirEntries, eApgDirEntriesIds.dir);
+const SERVER_INFO = Dir.ApgDirGetServerInfo(Dir.ApgDirEntries[Dir.eApgDirEntriesIds.dir]);
 
 
 Tng.ApgTngService.Init("./srv/templates", "", {

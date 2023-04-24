@@ -8,9 +8,9 @@
 import { Drash } from "../deps.ts";
 import { ApgDirEntries, ApgDirMarkdownMaker } from "../../lib/mod.ts";
 
-export class ApgDirMarkupResource extends Drash.Resource {
+export class ApgDirMarkdownResource extends Drash.Resource {
 
-    public override paths = ["/markup/:entry"];
+    public override paths = ["/markdown/:entry"];
 
     public GET(request: Drash.Request, response: Drash.Response) {
 
@@ -23,11 +23,11 @@ export class ApgDirMarkupResource extends Drash.Resource {
             }
         }
 
-        const markup = index == -1 ?
+        const markdown = index == -1 ?
             `Error in Dir entry conversion: submitted entry [${rawEntry}] not found `:
             ApgDirMarkdownMaker.Convert(ApgDirEntries[index]) ;
 
-        response.text(markup);
+        response.text(markdown);
 
     }
 

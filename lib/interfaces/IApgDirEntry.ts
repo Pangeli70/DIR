@@ -10,7 +10,7 @@
 export interface IApgDirEntry { 
 
     /** Identification number */
-    entry : number
+    id : number
     /** Acronym of the library */
     caption: string;
     /** Title of the library */

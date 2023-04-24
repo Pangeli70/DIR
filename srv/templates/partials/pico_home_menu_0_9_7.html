@@ -14,44 +14,37 @@
     <div>
         <details style="margin: 1rem;">
             <summary>
-                <% item.title %>
+                <h3><% item.title %></h3>
             </summary>
+            <p>
             <% if(item.subTitle !== undefined) { %>
-            <p>
-                <% item.subTitle %>
-            </p>
+                <% item.subTitle %></br>
             <% } %>
-
-            <p>
-                Released:&nbsp;<% item.released %>
-                </br>
+                Released:&nbsp;<% item.released %></br>
+                
                 Current version:&nbsp;<% item.version %>
             </p>
+            <h4>Library</h4>
             <p>
-                <% item.module %> </br>
+                <% item.library %> </br>
                 <a href="<% item.github %>" target="_blank">
                     <% item.github %>
-                </a>
+                </a> </br>
+                Import the library in your deps.ts file using: </br>
+                <pre>export * from "<% item.import %>";</pre>
             </p>
+            <h4>Microservice</h4>
             <p>
                 <% item.microservice %> </br>
                 <a href="<% item.href %>" target="_blank">
                     <% item.href %>
                 </a>
             </p>
+            <h4>Markdown</h4>
             <p>
-                Import the library in your deps.ts file using: </br>
-
-                    <pre>export * as&nbsp;<% item.caption.substring(4,7) %>&nbsp;from "<% item.import %>";</pre>
-
-            </p>
-            <p>
-                Get github file: </br>
-            
-                <a href="/markup/<% item.caption %>" target="_blank">
+                <a href="/markdown/<% item.caption %>" target="_blank">
                     readme.md
                 </a>
-            
             </p>
         </details>
     </div>

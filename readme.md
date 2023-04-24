@@ -14,7 +14,7 @@ First released: **2022/10**
 
 <br>
 
-Current version: **0.9.6** 
+Current version: **0.9.7** 
 
 <br>
 
@@ -35,7 +35,7 @@ Import it in your deps.ts file using:
 
 <br>
 
-> export * as Dir from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts" 
+> export * from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts" 
 
 <br>
 

@@ -7,7 +7,7 @@
 import { Drash, Edr } from "./deps.ts";
 
 import { ApgDirHomeResource } from "./resources/ApgDirHomeResource.ts";
-import { ApgDirMarkupResource } from "./resources/ApgDirMarkupResource.ts";
+import { ApgDirMarkdownResource } from "./resources/ApgDirMarkdownResource.ts";
 
 
 export const resources: typeof Drash.Resource[] = [
@@ -18,6 +18,6 @@ export const resources: typeof Drash.Resource[] = [
 
     // Dir
     ApgDirHomeResource,
-    ApgDirMarkupResource
+    ApgDirMarkdownResource
 
 ];

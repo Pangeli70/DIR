@@ -14,7 +14,6 @@ export class ApgDirMarkdownMaker {
         
         const NL = "\n\n<br>\n";
         const HR = "\n---\n";
-        const NAME = aentry.caption.substring(4, 7);
 
         const r: string[] = [];
         
@@ -35,7 +34,7 @@ export class ApgDirMarkdownMaker {
         r.push(`${aentry.github} ${NL}` );
 
         r.push(`Import it in your deps.ts file using: ${NL}`);
-        const lib = `export * as ${NAME} from "${aentry.import}"`;
+        const lib = `export * from "${aentry.import}"`;
         r.push(`> ${lib} ${NL}`);
         
         r.push(`## Help ${HR}`);

@@ -1,9 +1,18 @@
 # Apg-Dir Help
+
+Ver. 0.9.7 - 2023/04/25
 <br>
 
-Import the library in deps.ts of your project using:
+### Import the library in ```deps.ts``` of your project 
+
+Using:
 ```Typescript
-export * as Dir from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts";
+export * as Dir from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/lib/mod.ts";
+```
+
+Or using (Defaults to ```Dir```):
+```Typescript
+export * from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts";
 ```
 
 Import in your file using:
@@ -11,24 +20,28 @@ Import in your file using:
 import { Dir, ... } from "[...PATH...]/deps.ts";
 ```
 
-The library exposes an enumeration that identifies all registered modules.
+### The library exposes:
+
+* An enumeration that identifies all registered APG modules.
 ```Typescript
-    Dir.eApgDirEntriesIds
+Dir.eApgDirEntriesIds
 ```
 
-An interface for describing the libraries :
+* An interface for describing the libraries :
 ```Typescript
-    Dir.IApgDirEntry
+Dir.IApgDirEntry
 ```
 
-And a data set as an array of entries:
+* And a data set as an array of entries:
 ```Typescript
-    Dir.ApgDirEntries
+Dir.ApgDirEntries
 ```
+
+### Usage
 
 You can access the entries using the enumeration. Eg.
 ```Typescript
-    const dirEntry = Dir.IApgDirEntries[Dir..eApgDirEntriesIds.dir];
+const dirEntry = Dir.IApgDirEntries[Dir..eApgDirEntriesIds.dir];
 ```
 
 To initialize the Drash development server and get a different local port for any of the APG ecosystem libraries servers it is possible to use the following function.
@@ -37,7 +50,7 @@ To initialize the Drash development server and get a different local port for an
 import { Dir, Uts, ... } from "./deps.ts";
 ...
 
-const SERVER_INFO = Dir.ApgDirGetServerInfo(Dir.eApgDirEntries.dir);
+const SERVER_INFO = Dir.ApgDirGetServerInfo(Dir.ApgDirEntries[Dir.eApgDirEntries.dir]);
 ...
 
 const server = new Drash.Server({
@@ -58,5 +71,18 @@ server.run();
 Uts.ApgUtsServer.StartupResume(SERVER_INFO);
 
 ```
+
+To produce a standard markdowon page for the readme.md it is possible to use the following function.
+
+```Typescript
+import { Dir, Uts, ... } from "./deps.ts";
+...
+const index = ...;
+const entry = Dir.ApgDirEntries[index];
+const markdown = Dir.ApgDirMarkdownMaker.Convert(entry) ;
+...
+```
+
+---
 
 [Back to readme](../readme.md)

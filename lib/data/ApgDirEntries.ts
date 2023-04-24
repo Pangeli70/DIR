@@ -14,7 +14,7 @@ import { IApgDirEntry } from "../interfaces/IApgDirEntry.ts";
 /** Database of the current APG's modules directory */
 export const ApgDirEntries: IApgDirEntry[] = [
     {
-        entry: eApgDirEntriesIds.dir,
+        id: eApgDirEntriesIds.dir,
         caption: "Apg-Dir",
         title: "Directory of the APG ecosystem",
         subTitle: "Libraries on Github and microservices on Deno deploy",
@@ -23,11 +23,11 @@ export const ApgDirEntries: IApgDirEntry[] = [
         microservice: "Produces a website that presents the list as a browsable directory.",
         href: "https://apg-dir.deno.dev/",
         released: "2022/10",
-        version: "0.9.6",
+        version: "0.9.7",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts",
     },
     {
-        entry: eApgDirEntriesIds.cdn,
+        id: eApgDirEntriesIds.cdn,
         caption: "Apg-Cdn",
         title: "A personal content delivery network on deno deploy ",
         library: "Exposes a service that with a simple cache management of common assets like style sheets, javascript, icons, images etc.",
@@ -39,7 +39,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "https://raw.githubusercontent.com/Pangeli70/apg-cdn/master/mod.ts",
     },
     {
-        entry: eApgDirEntriesIds.tng,
+        id: eApgDirEntriesIds.tng,
         caption: "Apg-Tng",
         title: "A template engine for HTML",
         subTitle: "Produces dynamic Server Side Rendered documents",
@@ -52,7 +52,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "https://raw.githubusercontent.com/Pangeli70/apg-tng/master/mod.ts",
     },
     {
-        entry: eApgDirEntriesIds.tst,
+        id: eApgDirEntriesIds.tst,
         caption: "Apg-Tst",
         title: "Browser of the results of ApgUtsSpecable tests.",
         library: "Exposes a service that stores in memory the incoming data of the test results and helps to present this data",
@@ -64,7 +64,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "https://raw.githubusercontent.com/Pangeli70/apg-tst/master/mod.ts",
     },
     {
-        entry: eApgDirEntriesIds.cad,
+        id: eApgDirEntriesIds.cad,
         caption: "Apg-Cad",
         title: "A simple headless 2D cad engine to produce dynamic Server Side Rendered SVG and DXF drawings .",
         library: "A series of entities focused on 2D drawings with all the common features of a CAD",
@@ -77,7 +77,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
     },
     {
         caption: "Apg-Cii",
-        entry: eApgDirEntriesIds.cii,
+        id: eApgDirEntriesIds.cii,
         title: "A Cad Instructions Interpreter that uses a headless 2D cad engine to produce SVG and DXF drawings.",
         library: "A series of entities that can ",
         github: "https://github.com/Pangeli70/apg-cii",
@@ -88,7 +88,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "https://raw.githubusercontent.com/Pangeli70/apg-cii/master/mod.ts",
     },
     {
-        entry: eApgDirEntriesIds.dhe,
+        id: eApgDirEntriesIds.dhe,
         caption: "Apg-Dhe",
         title: "A component style engine to produce static Server Side Rendered Html.",
         library: "",
@@ -100,7 +100,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "",
     },
     {
-        entry: eApgDirEntriesIds.lgr,
+        id: eApgDirEntriesIds.lgr,
         caption: "Apg-Lgr",
         title: "Logging and performance measurements using Deno.",
         library: "A series of entities to manage logging and profiling of code",
@@ -112,7 +112,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "https://raw.githubusercontent.com/Pangeli70/apg-lgr/master/mod.ts",
     },
     {
-        entry: eApgDirEntriesIds.mng,
+        id: eApgDirEntriesIds.mng,
         caption: "Apg-Mng",
         title: "A series of tools to manage Mongo DB connections and operations.",
         library: "",
@@ -124,7 +124,7 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "",
     },
     {
-        entry: eApgDirEntriesIds.jsv,
+        id: eApgDirEntriesIds.jsv,
         caption: "Apg-Jsv",
         title: "Json schema validation through AJV.",
         library: "A series of entities for creation and storage of AJV validation functions",
