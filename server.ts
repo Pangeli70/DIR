@@ -10,11 +10,11 @@ import { Dir} from "./mod.ts";
 import { resources } from "./srv/res.ts";
 import { services } from "./srv/svcs.ts";
 
-
 const SERVER_INFO = Dir.ApgDirGetServerInfo(Dir.ApgDirEntries[Dir.eApgDirEntriesIds.dir]);
 
+const remoteTngHost = "";
 
-Tng.ApgTngService.Init("./srv/templates", "", {
+Tng.ApgTngService.Init("./srv/templates", remoteTngHost , {
   useCache: false,
   cacheChunksLongerThan: 100,
   consoleLog: true,
