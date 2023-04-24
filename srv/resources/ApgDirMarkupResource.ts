@@ -1,12 +1,12 @@
 /** -----------------------------------------------------------------------
- * @module [Dir/Resources]
+ * @module [Dir/srv]
  * @author [APG] ANGELI Paolo Giusto
- * @version 0.9.6 [APG 2023/04/24] 
+ * @version 0.9.6 [APG 2023/04/24]
+ * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash } from "../../deps.ts";
-import { ApgDirEntries } from "../../mod.ts";
-import { ApgDirMarkupMaker } from "../../src/classes/ApgDirMarkupMaker.ts";
+import { Drash } from "../deps.ts";
+import { ApgDirEntries, ApgDirMarkdownMaker } from "../../lib/mod.ts";
 
 export class ApgDirMarkupResource extends Drash.Resource {
 
@@ -25,7 +25,7 @@ export class ApgDirMarkupResource extends Drash.Resource {
 
         const markup = index == -1 ?
             `Error in Dir entry conversion: submitted entry [${rawEntry}] not found `:
-            ApgDirMarkupMaker.Convert(ApgDirEntries[index]) ;
+            ApgDirMarkdownMaker.Convert(ApgDirEntries[index]) ;
 
         response.text(markup);
 

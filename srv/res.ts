@@ -1,11 +1,14 @@
 /** -----------------------------------------------------------------------
- * @module [Dir/Resources]
+ * @module [Dir/srv]
  * @author [APG] ANGELI Paolo Giusto
+ * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * ------------------------------------------------------------------------
 */
-import { Drash } from "./deps.ts";
-import { Edr }  from "./deps.ts";
-import * as res from "./resources/mod.ts";
+import { Drash, Edr } from "./deps.ts";
+
+import { ApgDirHomeResource } from "./resources/ApgDirHomeResource.ts";
+import { ApgDirMarkupResource } from "./resources/ApgDirMarkupResource.ts";
+
 
 export const resources: typeof Drash.Resource[] = [
 
@@ -14,7 +17,7 @@ export const resources: typeof Drash.Resource[] = [
     Edr.ApgEdrPublicBinFileResource,
 
     // Dir
-    res.ApgDirHomeResource,
-    res.ApgDirMarkupResource
+    ApgDirHomeResource,
+    ApgDirMarkupResource
 
 ];

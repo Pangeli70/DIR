@@ -2,18 +2,19 @@
  * @module [Dir/Application]
  * @author [APG] ANGELI Paolo Giusto
  * @version 0.9.2 [APG 2022/10/30] Deno Deploy Beta
+ * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash, Uts, Tng } from "./deps.ts";
-import { ApgDirGetServerInfo, eApgDirEntriesIds } from "./mod.ts";
-import { resources } from "./res.ts";
-import { services } from "./svcs.ts";
+import { Drash, Uts, Tng } from "./srv/deps.ts";
+import { ApgDirGetServerInfo, eApgDirEntriesIds, ApgDirEntries } from "./lib/mod.ts";
+import { resources } from "./srv/res.ts";
+import { services } from "./srv/svcs.ts";
 
 
-const SERVER_INFO = ApgDirGetServerInfo(eApgDirEntriesIds.dir);
+const SERVER_INFO = ApgDirGetServerInfo(ApgDirEntries, eApgDirEntriesIds.dir);
 
 
-Tng.ApgTngService.Init("./templates", "", {
+Tng.ApgTngService.Init("./srv/templates", "", {
   useCache: false,
   cacheChunksLongerThan: 100,
   consoleLog: true,

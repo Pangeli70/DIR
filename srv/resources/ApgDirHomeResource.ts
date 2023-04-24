@@ -1,12 +1,13 @@
 /** -----------------------------------------------------------------------
- * @module [Dir/Resources]
+ * @module [Dir/srv]
  * @author [APG] ANGELI Paolo Giusto
  * @version 0.9.2 [APG 2022/10/30] Deno Deploy Beta
  * @version 0.9.6 [APG 2023/04/16] Dir Entries
+ * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash, Tng } from "../../deps.ts";
-import { ApgDirEntries, ApgDirGetServerInfo, eApgDirEntriesIds } from "../../mod.ts";
+import { Drash, Tng } from "../deps.ts";
+import { ApgDirEntries, ApgDirGetServerInfo, eApgDirEntriesIds } from "../../lib/mod.ts";
 
 export class ApgDirHomeResource extends Drash.Resource {
 
@@ -14,7 +15,7 @@ export class ApgDirHomeResource extends Drash.Resource {
 
     public async GET(_request: Drash.Request, response: Drash.Response) {
 
-        const SERVER_INFO = ApgDirGetServerInfo(eApgDirEntriesIds.dir);
+        const SERVER_INFO = ApgDirGetServerInfo(ApgDirEntries, eApgDirEntriesIds.dir);
 
         const templateData = {
             site: {

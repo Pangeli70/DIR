@@ -6,4 +6,13 @@
  * -----------------------------------------------------------------------
  */
 
-export * as Dir from "./lib/mod.ts";
+
+export * from "./classes/ApgDirMarkdownMaker.ts";
+
+export * from "./data/ApgDirEntries.ts";
+
+export * from "./enums/eApgDirEntriesIds.ts";
+
+export * from "./functions/ApgDirFunctions.ts";
+
+export type { IApgDirEntry } from "./interfaces/IApgDirEntry.ts"
