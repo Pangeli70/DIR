@@ -27,6 +27,18 @@ export const ApgDirEntries: IApgDirEntry[] = [
         import: "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts",
     },
     {
+        id: eApgDirEntriesIds.edr,
+        caption: "Apg-Edr",
+        title: "Enhanced Drash Resources",
+        library: "Entities that extend the basic Drash resources behaviours",
+        github: "https://github.com/Pangeli70/apg-edr",
+        microservice: "Presents a series of pages to test the available features ",
+        href: "https://apg-cii.deno.edr/",
+        released: "",
+        version: "0.9.7",
+        import: "https://raw.githubusercontent.com/Pangeli70/apg-edr/master/mod.ts",
+    },
+    {
         id: eApgDirEntriesIds.cdn,
         caption: "Apg-Cdn",
         title: "A personal content delivery network on deno deploy ",
@@ -134,5 +146,6 @@ export const ApgDirEntries: IApgDirEntry[] = [
         released: "",
         version: "0.9.6",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-jsv/master/mod.ts",
-    }
+    },
+
 ]

@@ -11,6 +11,7 @@
 export enum eApgDirEntriesIds { 
     none = -1,
     dir,
+    edr,
     cdn,
     tng,
     tst,
@@ -23,7 +24,6 @@ export enum eApgDirEntriesIds {
     lgr,
     jsv,
     dhe,
-    edr,
     a2d,
     svg,
     sel,
