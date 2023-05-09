@@ -1,12 +1,13 @@
 /** -----------------------------------------------------------------------
- * @module [Dir/srv]
+ * @module [apg-dir]
  * @author [APG] ANGELI Paolo Giusto
  * @version 0.9.6 [APG 2023/04/24]
  * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash } from "../deps.ts";
-import { ApgDirEntries, ApgDirMarkdownMaker } from "../../lib/mod.ts";
+import { Drash , Uts} from "../deps.ts";
+import { ApgDirMarkdownMaker, eApgDirEntriesIds } from "../../lib/mod.ts";
+import { ApgDirEntries } from "../data/ApgDirEntries.ts";
 
 export class ApgDirMarkdownResource extends Drash.Resource {
 
@@ -14,18 +15,11 @@ export class ApgDirMarkdownResource extends Drash.Resource {
 
     public GET(request: Drash.Request, response: Drash.Response) {
 
-        const rawEntry = request.pathParam('entry');
-        let index = -1;
-        for (let i = 0; i < ApgDirEntries.length ; i++) { 
-            if (ApgDirEntries[i].caption == rawEntry!) { 
-                index = i;
-                break;
-            }
-        }
+        const rawEntry = request.pathParam('entry')!;
 
-        const markdown = index == -1 ?
+        const markdown = Uts.ApgUtsEnum.StringContains(eApgDirEntriesIds, rawEntry) ?
             `Error in Dir entry conversion: submitted entry [${rawEntry}] not found `:
-            ApgDirMarkdownMaker.Convert(ApgDirEntries[index]) ;
+            ApgDirMarkdownMaker.Convert(ApgDirEntries[rawEntry as eApgDirEntriesIds]) ;
 
         response.text(markdown);
 

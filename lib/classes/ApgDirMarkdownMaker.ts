@@ -1,5 +1,5 @@
 /** -----------------------------------------------------------------------
- * @module [Dir/lib]
+ * @module [apg-dir]
  * @author [APG] ANGELI Paolo Giusto
  * @version 0.9.6 [APG 2023/04/24]
  * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
@@ -44,7 +44,7 @@ export class ApgDirMarkdownMaker {
 
         r.push(`## Microservice ${HR}`); 
         r.push(`${aentry.microservice} ${NL}`);
-        r.push(`${aentry.href} ${NL}`);
+        r.push(`${aentry.deploy} ${NL}`);
         
         return r.join("\n");
 

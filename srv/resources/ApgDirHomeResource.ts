@@ -1,5 +1,5 @@
 /** -----------------------------------------------------------------------
- * @module [Dir/srv]
+ * @module [apg-dir]
  * @author [APG] ANGELI Paolo Giusto
  * @version 0.9.2 [APG 2022/10/30] Deno Deploy Beta
  * @version 0.9.6 [APG 2023/04/16] Dir Entries
@@ -7,7 +7,8 @@
  * -----------------------------------------------------------------------
  */
 import { Drash, Tng } from "../deps.ts";
-import { Dir } from "../..//mod.ts";
+import * as Dir from "../../mod.ts";
+import { ApgDirEntries } from "../data/ApgDirEntries.ts";
 
 export class ApgDirHomeResource extends Drash.Resource {
 
@@ -15,7 +16,7 @@ export class ApgDirHomeResource extends Drash.Resource {
 
     public async GET(_request: Drash.Request, response: Drash.Response) {
 
-        const SERVER_INFO = Dir.ApgDirGetServerInfo(Dir.ApgDirEntries[Dir.eApgDirEntriesIds.dir]);
+        const SERVER_INFO = Dir.ApgDirGetServerInfo(ApgDirEntries[Dir.eApgDirEntriesIds.dir]);
 
         const templateData = {
             site: {
@@ -27,7 +28,7 @@ export class ApgDirHomeResource extends Drash.Resource {
                 toolbar: "",
                 released: "2022/30/10"
             },
-            menu: Dir.ApgDirEntries,
+            menu: ApgDirEntries,
         };
 
         const html = await Tng.ApgTngService.Render("/home.html", templateData) as string;
