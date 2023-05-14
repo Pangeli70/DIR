@@ -19,20 +19,26 @@ export interface IApgDirEntry {
     title: string;
     /** Sub Title of the library */
     subTitle?: string;
+    /** Current semver */
+    version: string;
+    /** Last release */
+    released: string;
+    /** Date first release */
+    since: string;
     /** Description of the module */
     library: string;
-    /** Description of the microservice */
-    microservice: string;
-    /** Local port of the microservice */
-    localPort?: number;
     /** Github repository address of the library */
     github: string;
     /** Import string for the deps.ts file*/
     import: string;
-    /** Address of the example or test website (if available)*/
-    deploy: string;
-    /** Date first release */
-    released: string;
-    /** Current semver */
-    version: string;
+    /** Library dependencies */
+    libDeps: eApgDirEntriesIds[];
+    /** Description of the microservice.  */
+    microservice: string;
+    /** Local port of the microservice */
+    localPort?: number;
+    /** Address of the example or test website*/
+    deploy?: string;
+    /** Microservice dependencies */
+    srvDeps?: eApgDirEntriesIds[];
 }

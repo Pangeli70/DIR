@@ -7,4 +7,3 @@
  */
 
 export * from "./lib/mod.ts";
-export { ApgDirEntries } from "./srv/data/ApgDirEntries.ts"

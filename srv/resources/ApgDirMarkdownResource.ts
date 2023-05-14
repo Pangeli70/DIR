@@ -5,9 +5,8 @@
  * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash , Uts} from "../deps.ts";
-import { ApgDirMarkdownMaker, eApgDirEntriesIds } from "../../lib/mod.ts";
-import { ApgDirEntries } from "../data/ApgDirEntries.ts";
+import { Drash, Uts } from "../deps.ts";
+import * as Dir from "../../lib/mod.ts";
 
 export class ApgDirMarkdownResource extends Drash.Resource {
 
@@ -15,15 +14,15 @@ export class ApgDirMarkdownResource extends Drash.Resource {
 
     public GET(request: Drash.Request, response: Drash.Response) {
 
-        const rawEntry = request.pathParam('entry')!;
-
-        const markdown = Uts.ApgUtsEnum.StringContains(eApgDirEntriesIds, rawEntry) ?
-            `Error in Dir entry conversion: submitted entry [${rawEntry}] not found `:
-            ApgDirMarkdownMaker.Convert(ApgDirEntries[rawEntry as eApgDirEntriesIds]) ;
+        const rawEntry = request.pathParam('entry')!
+        const entry = rawEntry.toLowerCase().split("-")[1] as Dir.eApgDirEntriesIds;
+        const isValidEntry = Uts.ApgUtsEnum.StringContains(Dir.eApgDirEntriesIds, entry);
+        const markdown = !isValidEntry ?
+            `*ApgDir/2345*: the submitted entry [${rawEntry}] was not found ` :
+            Dir.ApgDirMarkdownMaker.Convert(Dir.ApgDirEntries, entry);
 
         response.text(markdown);
 
     }
-
 
 }

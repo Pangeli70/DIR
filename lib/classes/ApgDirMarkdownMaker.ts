@@ -6,46 +6,70 @@
  * -----------------------------------------------------------------------
 */
 
+import { eApgDirEntriesIds } from "../enums/eApgDirEntriesIds.ts";
 import { IApgDirEntry } from "../interfaces/IApgDirEntry.ts";
 
-export class ApgDirMarkdownMaker { 
+export class ApgDirMarkdownMaker {
 
-    static Convert(aentry: IApgDirEntry) {
-        
+    static Convert(aentries: Record<eApgDirEntriesIds, IApgDirEntry>, aid: eApgDirEntriesIds) {
+
+        const entry: IApgDirEntry = aentries[aid];
+
         const NL = "\n\n<br>\n";
         const HR = "\n---\n";
 
         const r: string[] = [];
-        
-        r.push(`# **${aentry.caption}** ${NL} `);
-        
-        r.push(`### ${aentry.title} ${NL}`);
-        if (aentry.subTitle !== undefined) { 
-            r.push(`${aentry.subTitle} ${NL}`);
+
+        r.push(`# **${entry.caption}** ${NL} `);
+
+        r.push(`### ${entry.title} ${NL}`);
+        if (entry.subTitle !== undefined) {
+            r.push(`${entry.subTitle} ${NL}`);
         }
-        r.push(`First released: **${aentry.released}** ${NL}`);
+        r.push(`Current version: **${entry.version}** ${NL}`);
+        r.push(`Last release: **${entry.released}** ${NL}`);
+        r.push(`Since: **${entry.since}** ${NL}`);
 
-        r.push(`Current version: **${aentry.version}** ${NL}`);
+        r.push(`<br>\n`);
 
-        r.push(`<br>\n`); 
-
-        r.push(`## Library ${HR}`); 
-        r.push(`${aentry.library} ${NL}`);
-        r.push(`${aentry.github} ${NL}` );
+        r.push(`## Library ${HR}`);
+        r.push(`${entry.library} ${NL}`);
+        r.push(`${entry.github} ${NL}`);
 
         r.push(`Import it in your deps.ts file using: ${NL}`);
-        const lib = `export * from "${aentry.import}"`;
+        const lib = `export * as ${entry.caption.split("-")[1]} from "${entry.import}"`;
         r.push(`> ${lib} ${NL}`);
-        
+
+        r.push(`The library has the following Apg dependencies: ${NL}`);
+        for (const id of entry.libDeps) {
+            const caption = aentries[id].caption
+            const link = aentries[id].github
+            r.push(`> [${caption}](${link})${NL}`);
+        }
+        r.push(`${NL}<br>\n`);
+
         r.push(`## Help ${HR}`);
         r.push(`[Index](hlp/index.md)  ${NL}`);
 
-        r.push(`<br>\n`); 
+        r.push(`<br>\n`);
 
-        r.push(`## Microservice ${HR}`); 
-        r.push(`${aentry.microservice} ${NL}`);
-        r.push(`${aentry.deploy} ${NL}`);
-        
+        r.push(`## Microservice ${HR}`);
+        r.push(`${entry.microservice} ${NL}`);
+
+        if (entry.deploy) {
+            r.push(`${entry.deploy} ${NL}`);
+        }
+
+        if (entry.srvDeps) {
+            r.push(`The microservice has the following Apg additional dependencies: ${NL}`);
+            for (const id of entry.srvDeps) {
+                const caption = aentries[id].caption
+                const link = aentries[id].github
+                r.push(`> [${caption}](${link})${NL}`);
+            }
+        }
+        r.push(`<br>\n`);
+
         return r.join("\n");
 
     }

@@ -6,15 +6,19 @@
 
 <br>
 
-Libraries on Github and microservices on Deno deploy 
-
-<br>
-
-First released: **2022/10** 
+Lists the published libraries on Github and the published microservices on Deno deploy 
 
 <br>
 
 Current version: **0.9.7** 
+
+<br>
+
+Last release: **2023/05/13** 
+
+<br>
+
+Since: **2022/10** 
 
 <br>
 
@@ -23,7 +27,7 @@ Current version: **0.9.7**
 ## Library 
 ---
 
-Exposes the entities for the identification and description of libraries and microservices. 
+Entities for the identification and the description of libraries and microservices. 
 
 <br>
 
@@ -35,8 +39,21 @@ Import it in your deps.ts file using:
 
 <br>
 
-> export * from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts" 
+> export * as Dir from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts" 
 
+<br>
+
+The library has the following Apg dependencies: 
+
+<br>
+
+> [Apg-Uts](https://github.com/Pangeli70/apg-uts)
+
+<br>
+
+
+
+<br>
 <br>
 
 ## Help 
@@ -51,10 +68,24 @@ Import it in your deps.ts file using:
 ## Microservice 
 ---
 
-Produces a website that presents the list as a browsable directory. 
+Produces this website that presents the list as a browsable directory. 
 
 <br>
 
 https://apg-dir.deno.dev/ 
+
+<br>
+
+The microservice has the following Apg additional dependencies: 
+
+<br>
+
+> [Apg-Tng](https://github.com/Pangeli70/apg-tng)
+
+<br>
+
+> [Apg-Cdn](https://github.com/Pangeli70/apg-cdn)
+
+<br>
 
 <br>

@@ -6,6 +6,6 @@
 */
 import { DrashCorsService, Drash } from "./deps.ts";
 
-export const services: Drash.Service[] = [
+export const ApgDirServices: Drash.Service[] = [
     new DrashCorsService()
 ];

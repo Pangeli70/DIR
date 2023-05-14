@@ -8,7 +8,6 @@
  */
 import { Drash, Tng } from "../deps.ts";
 import * as Dir from "../../mod.ts";
-import { ApgDirEntries } from "../data/ApgDirEntries.ts";
 
 export class ApgDirHomeResource extends Drash.Resource {
 
@@ -16,7 +15,7 @@ export class ApgDirHomeResource extends Drash.Resource {
 
     public async GET(_request: Drash.Request, response: Drash.Response) {
 
-        const SERVER_INFO = Dir.ApgDirGetServerInfo(ApgDirEntries[Dir.eApgDirEntriesIds.dir]);
+        const SERVER_INFO = Dir.ApgDirEntries[Dir.eApgDirEntriesIds.dir];
 
         const templateData = {
             site: {
@@ -28,10 +27,10 @@ export class ApgDirHomeResource extends Drash.Resource {
                 toolbar: "",
                 released: "2022/30/10"
             },
-            menu: ApgDirEntries,
+            record: Dir.ApgDirEntries,
         };
 
-        const html = await Tng.ApgTngService.Render("/home.html", templateData) as string;
+        const html = await Tng.ApgTngService.Render("/ApgDirHomePage.html", templateData) as string;
 
         response.html(html);
 

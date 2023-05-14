@@ -7,10 +7,10 @@
  */
 import { Drash, Uts, Tng } from "./srv/deps.ts";
 import * as Dir from "./mod.ts";
-import { resources } from "./srv/res.ts";
-import { services } from "./srv/svcs.ts";
+import { ApgDirResources } from "./srv/res.ts";
+import { ApgDirServices } from "./srv/svcs.ts";
 
-const SERVER_INFO = Dir.ApgDirGetServerInfo(Dir.ApgDirEntries[Dir.eApgDirEntriesIds.dir]);
+const serverInfo = Dir.ApgDirGetServerInfo(Dir.eApgDirEntriesIds.dir);
 
 const remoteTngHost = "";
 
@@ -25,12 +25,12 @@ Tng.ApgTngService.Init("./srv/templates", remoteTngHost, {
 
 const server = new Drash.Server({
   hostname: '0.0.0.0',
-  port: SERVER_INFO.localPort,
-  resources: resources,
-  services: services,
+  port: serverInfo.localPort,
+  resources: ApgDirResources,
+  services: ApgDirServices,
   protocol: "http"
 });
 
 server.run();
 
-Uts.ApgUtsServer.StartupResume(SERVER_INFO);
+Uts.ApgUtsServer.StartupResume(serverInfo);

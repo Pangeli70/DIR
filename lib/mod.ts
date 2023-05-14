@@ -10,6 +10,8 @@ export * from "./classes/ApgDirMarkdownMaker.ts";
 
 export * from "./enums/eApgDirEntriesIds.ts";
 
+export * from "./data/ApgDirEntries.ts";
+
 export * from "./functions/ApgDirFunctions.ts";
 
-export type { IApgDirEntry } from "./interfaces/IApgDirEntry.ts"
+export type { IApgDirEntry } from "./interfaces/IApgDirEntry.ts";
