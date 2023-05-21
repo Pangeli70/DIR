@@ -9,6 +9,7 @@
 
 /** Identification of the modules or microservices */
 export enum eApgDirEntriesIds { 
+    uts = "uts",
     dir = "dir",
     edr = "edr",
     cdn = "cdn",
@@ -16,7 +17,6 @@ export enum eApgDirEntriesIds {
     tst = "tst",
     cad = "cad",
     cii = "cii",
-    uts = "uts",
     ath = "ath",
     rst = "rst",
     maa = "maa",
@@ -32,6 +32,7 @@ export enum eApgDirEntriesIds {
     rgr = "rgr",
     wgl = "wgl",
     doc = "doc",
+    mus = "mus",
 
 }
 

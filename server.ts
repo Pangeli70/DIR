@@ -5,12 +5,11 @@
  * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash, Uts, Tng } from "./srv/deps.ts";
-import * as Dir from "./mod.ts";
+import { Drash, Tng, Dir } from "./srv/deps.ts";
 import { ApgDirResources } from "./srv/res.ts";
 import { ApgDirServices } from "./srv/svcs.ts";
 
-const serverInfo = Dir.ApgDirGetServerInfo(Dir.eApgDirEntriesIds.dir);
+const serverInfo = Dir.ApgDirServer.GetInfo(Dir.eApgDirEntriesIds.dir);
 
 const remoteTngHost = "";
 
@@ -33,4 +32,4 @@ const server = new Drash.Server({
 
 server.run();
 
-Uts.ApgUtsServer.StartupResume(serverInfo);
+Dir.ApgDirServer.StartupResume(serverInfo);

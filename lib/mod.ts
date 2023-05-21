@@ -12,6 +12,7 @@ export * from "./enums/eApgDirEntriesIds.ts";
 
 export * from "./data/ApgDirEntries.ts";
 
-export * from "./functions/ApgDirFunctions.ts";
+export * from "./statics/ApgDirServer.ts";
 
 export type { IApgDirEntry } from "./interfaces/IApgDirEntry.ts";
+export type { IApgDirServerInfo } from "./interfaces/IApgDirServerInfo.ts";

@@ -9,6 +9,9 @@
 import { eApgDirEntriesIds } from "../enums/eApgDirEntriesIds.ts";
 import { IApgDirEntry } from "../interfaces/IApgDirEntry.ts";
 
+/**
+ * Create a markdown formatted file from the ApgDirEntry data
+ */
 export class ApgDirMarkdownMaker {
 
     static Convert(aentries: Record<eApgDirEntriesIds, IApgDirEntry>, aid: eApgDirEntriesIds) {

@@ -33,7 +33,7 @@ const DOC_LOCAL_PORT = 6789;
  */
 export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
 
-    // TODO Move these definitions in their own modules and then import them from here
+    // TODO @9 Maybe move these definitions in their own modules and then import entries from here -- APG 20230514
 
     [eApgDirEntriesIds.dir]: {
         id: eApgDirEntriesIds.dir,
@@ -54,6 +54,21 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
     },
 
 
+    [eApgDirEntriesIds.uts]: {
+        id: eApgDirEntriesIds.uts,
+        caption: "Apg-Uts",
+        title: "Utility functions for the apg ecosystem",
+        version: "0.9.7",
+        released: "2023/05/13",
+        since: "2018/06",
+        library: "Helper entities (usually static methods) used to automate common simple operations on strings, numbers, conversions etc. ",
+        github: "https://github.com/Pangeli70/apg-uts",
+        import: "https://raw.githubusercontent.com/Pangeli70/apg-uts/master/mod.ts",
+        libDeps: [],
+        microservice: "Not available",
+    },
+
+    
     [eApgDirEntriesIds.edr]: {
         id: eApgDirEntriesIds.edr,
         caption: "Apg-Edr",
@@ -224,21 +239,6 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         github: "",
         import: "",
         libDeps: [],
-        microservice: "Not available",
-    },
-
-
-    [eApgDirEntriesIds.uts]: {
-        id: eApgDirEntriesIds.uts,
-        caption: "Apg-Uts",
-        title: "Utility functions for the apg ecosystem",
-        version: "0.9.7",
-        released: "2023/05/13",
-        since: "",
-        library: "Helper entities (usually static methods) used to automate common simple operations on strings, numbers, conversions etc. ",
-        github: "https://github.com/Pangeli70/apg-uts",
-        import: "https://raw.githubusercontent.com/Pangeli70/apg-uts/master/mod.ts",
-        libDeps:[],
         microservice: "Not available",
     },
 
@@ -422,6 +422,20 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         released: "...",
         since: "...",
         library: "Exposes entities useful to produce static Server Side Rendered Html.",
+        github: "",
+        import: "",
+        libDeps: [],
+        microservice: "Not available",
+    },
+
+    [eApgDirEntriesIds.mus]: {
+        id: eApgDirEntriesIds.mus,
+        caption: "Apg-Mus",
+        title: "Values with measure units",
+        version: "...",
+        released: "...",
+        since: "...",
+        library: "Exposes entities useful to manage values with measure units and their conversions.",
         github: "",
         import: "",
         libDeps: [],
