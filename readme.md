@@ -1,12 +1,8 @@
-# **Apg-Dir** 
+# **Apg-Rst** 
 
 <br>
  
-### Directory of the APG ecosystem 
-
-<br>
-
-Lists the published libraries on Github and the published microservices on Deno deploy 
+### Composite results management 
 
 <br>
 
@@ -18,7 +14,7 @@ Last release: **2023/05/13**
 
 <br>
 
-Since: **2022/10** 
+Since: **2018/06** 
 
 <br>
 
@@ -27,11 +23,11 @@ Since: **2022/10**
 ## Library 
 ---
 
-Entities for the identification and the description of libraries and microservices. 
+Entities useful to manage composite returns from method results that can carry additional informations and payloads about processing or errors. 
 
 <br>
 
-https://github.com/Pangeli70/apg-dir 
+https://github.com/Pangeli70/apg-rst 
 
 <br>
 
@@ -39,7 +35,7 @@ Import it in your deps.ts file using:
 
 <br>
 
-> export * as Dir from "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts" 
+> export * as Rst from "https://raw.githubusercontent.com/Pangeli70/apg-rst/master/mod.ts" 
 
 <br>
 
@@ -68,23 +64,7 @@ The library has the following Apg dependencies:
 ## Microservice 
 ---
 
-Produces this website that presents the list as a browsable directory. 
-
-<br>
-
-https://apg-dir.deno.dev/ 
-
-<br>
-
-The microservice has the following Apg additional dependencies: 
-
-<br>
-
-> [Apg-Tng](https://github.com/Pangeli70/apg-tng)
-
-<br>
-
-> [Apg-Cdn](https://github.com/Pangeli70/apg-cdn)
+Not available 
 
 <br>
 

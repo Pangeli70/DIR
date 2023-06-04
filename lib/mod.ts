@@ -9,6 +9,7 @@
 export * from "./classes/ApgDirMarkdownMaker.ts";
 
 export * from "./enums/eApgDirEntriesIds.ts";
+export * from "./enums/eApgDirDeploys.ts";
 
 export * from "./data/ApgDirEntries.ts";
 

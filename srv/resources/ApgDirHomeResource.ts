@@ -6,28 +6,28 @@
  * @version 0.9.7 [APG 2023/04/25] Separation of concerns lib/srv
  * -----------------------------------------------------------------------
  */
-import { Drash, Tng, Dir } from "../deps.ts";
+import { Edr, Tng, Dir } from "../deps.ts";
 
 
-export class ApgDirHomeResource extends Drash.Resource {
+export class ApgDirHomeResource extends Edr.Drash.Resource {
 
     public override paths = ["/"];
 
-    public async GET(_request: Drash.Request, response: Drash.Response) {
+    public async GET(_request: Edr.Drash.Request, response: Edr.Drash.Response) {
 
         const SERVER_INFO = Dir.ApgDirEntries[Dir.eApgDirEntriesIds.dir];
 
         const templateData = {
-            site: {
+            _site_: {
                 name: SERVER_INFO.caption,
                 title: SERVER_INFO.title
             },
-            page: {
+            _page_: {
                 title: "Directory",
                 toolbar: "",
                 released: "2022/30/10"
             },
-            record: Dir.ApgDirEntries,
+            _record_: Dir.ApgDirEntries,
         };
 
         const html = await Tng.ApgTngService.Render("/ApgDirHomePage.html", templateData) as string;

@@ -64,10 +64,14 @@ export class ApgDirMarkdownMaker {
         }
 
         if (entry.srvDeps) {
-            r.push(`The microservice has the following Apg additional dependencies: ${NL}`);
+            r.push(`The microservice has the following Apg additional dependencies for libraries and services: ${NL}`);
             for (const id of entry.srvDeps) {
-                const caption = aentries[id].caption
-                const link = aentries[id].github
+                let caption = id as string;
+                let link = id as string;
+                if (aentries[<eApgDirEntriesIds>id]) {
+                    caption = aentries[<eApgDirEntriesIds>id].caption
+                    link = aentries[<eApgDirEntriesIds>id].github as string;
+                }
                 r.push(`> [${caption}](${link})${NL}`);
             }
         }

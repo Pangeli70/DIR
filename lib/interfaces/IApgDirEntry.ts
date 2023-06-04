@@ -6,6 +6,7 @@
  * -----------------------------------------------------------------------
  */
 
+import { eApgDirDeploys } from "../enums/eApgDirDeploys.ts";
 import { eApgDirEntriesIds } from "../enums/eApgDirEntriesIds.ts";
 
 /** Entry for the Apg ecosystem library directory */
@@ -40,5 +41,5 @@ export interface IApgDirEntry {
     /** Address of the example or test website*/
     deploy?: string;
     /** Microservice dependencies */
-    srvDeps?: eApgDirEntriesIds[];
+    srvDeps?: (eApgDirEntriesIds | eApgDirDeploys) [];
 }

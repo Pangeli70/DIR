@@ -1,8 +1,9 @@
-<div style="display: flex; flex-flow: row; align-items: center;"></div>
-<% for (let property in record) { 
-    const item = record[property];
+<section id="list">
+<% for (let property in _record_) { 
+    const item = _record_[property];
     const href = (item.deploy != "") ? item.deploy: item.github;
     %>
+
     <details style="margin: 1rem;">
         <summary>
             <h3 style="font-size: 1.25rem;">
@@ -33,7 +34,8 @@
             The library has the following Apg dependencies:</br></br>
             <pre>
                 <% for (const id of item.libDeps) { %>
-                <a href="<% record[id].github %>" target="_blank">
+                    <% const libHref = (_record_[id] != undefined)? _record_[id].github : id; %>
+                <a href="<% libHref %>" target="_blank">
                     <% id %>
                 </a>,
                 <% } %>
@@ -48,10 +50,11 @@
             </a></pre>
             <% } %>
             <% if(item.srvDeps){ %>
-                The microservice has the following additional Apg dependencies:</br></br>
+                The microservice has the following additional Apg dependencies ofr libraries and services:</br></br>
                 <pre>
                     <% for (const id of item.srvDeps) { %>
-                    <a href="<% record[id].github %>" target="_blank">
+                    <% const srvHref = (_record_[id] != undefined)? _record_[id].github : id; %>
+                    <a href="<% srvHref %>" target="_blank">
                         <% id %>
                     </a>,
                     <% } %>
@@ -68,4 +71,5 @@
 
 
 <% } %>
-</div>
+
+</section>

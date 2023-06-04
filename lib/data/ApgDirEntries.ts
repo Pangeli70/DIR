@@ -6,6 +6,7 @@
  * -----------------------------------------------------------------------
  */
 
+import { eApgDirDeploys } from "../enums/eApgDirDeploys.ts";
 import { eApgDirEntriesIds } from "../enums/eApgDirEntriesIds.ts";
 import { IApgDirEntry } from "../interfaces/IApgDirEntry.ts";
 
@@ -47,10 +48,10 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         github: "https://github.com/Pangeli70/apg-dir",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-dir/master/mod.ts",
         libDeps: [eApgDirEntriesIds.uts],
-        microservice: "Produces this website that presents the list as a browsable directory.",
+        microservice: "Produces this website that presents the list as a browsable directory",
         localPort: DIR_LOCAL_PORT,
         deploy: "https://apg-dir.deno.dev/",
-        srvDeps: [eApgDirEntriesIds.tng, eApgDirEntriesIds.cdn],
+        srvDeps: [eApgDirEntriesIds.edr, eApgDirEntriesIds.tng, eApgDirDeploys.cdn_deploy],
     },
 
 
@@ -68,7 +69,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         microservice: "Not available",
     },
 
-    
+
     [eApgDirEntriesIds.edr]: {
         id: eApgDirEntriesIds.edr,
         caption: "Apg-Edr",
@@ -80,10 +81,9 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         github: "https://github.com/Pangeli70/apg-edr",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-edr/master/mod.ts",
         libDeps: [eApgDirEntriesIds.uts, eApgDirEntriesIds.lgr, eApgDirEntriesIds.rst],
-        microservice: "Presents a series of pages to test the available features.",
+        microservice: "Presents some pages to test the available features.",
         localPort: EDR_LOCAL_PORT,
-        deploy: "https://apg-cii.deno.edr/",
-        srvDeps: [eApgDirEntriesIds.uts, eApgDirEntriesIds.tng, eApgDirEntriesIds.cdn],
+        srvDeps: [eApgDirEntriesIds.dir, eApgDirEntriesIds.tng],
     },
 
 
@@ -97,11 +97,11 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Exposes a service with a simple cache management to address and share common assets like style sheets, javascript, icons, images etc.",
         github: "https://github.com/Pangeli70/apg-cdn",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-cdn/master/mod.ts",
-        libDeps: [eApgDirEntriesIds.uts, eApgDirEntriesIds.tng, eApgDirEntriesIds.cdn],
-        microservice: "Produces a website to browse the available shared assets.",
+        libDeps: [eApgDirEntriesIds.uts],
+        microservice: "Produces a website to browse the available shared assets to be used in other sites.",
         localPort: CDN_LOCAL_PORT,
         deploy: "https://apg-cdn.deno.dev/",
-        srvDeps: [eApgDirEntriesIds.uts, eApgDirEntriesIds.tng, eApgDirEntriesIds.cdn],
+        srvDeps: [eApgDirEntriesIds.dir, eApgDirEntriesIds.edr, eApgDirEntriesIds.tng],
     },
 
 
@@ -116,7 +116,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Exposes a configurable service with sophisticated caching strategies, that can use templates both from local and remote storages",
         github: "https://github.com/Pangeli70/apg-tng",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-tng/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Produces a website for datailed help and usage pages, some diagnostic pages, and an API to deliver reusable and shared templates",
         localPort: TNG_LOCAL_PORT,
         deploy: "https://apg-tng.deno.dev/",
@@ -134,7 +134,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         since: "2022/12",
         github: "https://github.com/Pangeli70/apg-tng",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-tst/master/mod.ts",
-        libDeps:[],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Produces a website to browse and analyze the results of the tests",
         localPort: TST_LOCAL_PORT,
         deploy: "https://apg-tst.deno.dev/",
@@ -152,7 +152,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Exposes entities useful to create and manipulate SVG documents",
         github: "https://github.com/Pangeli70/apg-svg",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-svg/master/mod.ts",
-        libDeps:[],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Not available",
     },
 
@@ -167,7 +167,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         since: "2022/12",
         github: "https://github.com/Pangeli70/apg-tng",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-cad/master/mod.ts",
-        libDeps:[],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Presents a series of pages of the results of the tests of the SVG engine",
         localPort: CAD_LOCAL_PORT,
         deploy: "https://apg-cad.deno.dev/",
@@ -186,7 +186,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "A series of entities that can ",
         github: "https://github.com/Pangeli70/apg-cii",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-cii/master/mod.ts",
-        libDeps:[],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Presents a series of pages of the results of the tests of the instructions interpreter",
         localPort: CII_LOCAL_PORT,
         deploy: "https://apg-cii.deno.dev/",
@@ -204,25 +204,25 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "A series of entities to manage logging and profiling of code",
         github: "https://github.com/Pangeli70/apg-lgr",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-lgr/master/mod.ts",
-        libDeps:[],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Presents a series of pages to browse the stored logs, and an API to perform remote storage",
         localPort: LGR_LOCAL_PORT,
         deploy: "https://apg-lgr.deno.dev/",
         srvDeps: [],
     },
 
-
+    // OK 2023/05/28 -----------------------
     [eApgDirEntriesIds.mng]: {
         id: eApgDirEntriesIds.mng,
         caption: "Apg-Mng",
-        title: "Mongo DB connections and operations.",
-        version: "0.9.6",
-        released: "2023/../..",
-        since: "",
-        library: "",
-        github: "",
-        import: "",
-        libDeps: [],
+        title: "Mongo DB connections and operations",
+        version: "0.9.7",
+        released: "2023/05/27",
+        since: "2022/10",
+        library: "A series of entities to use MongoDb on a local machine or MongoDB Atlas",
+        github: "https://github.com/Pangeli70/apg-lgr",
+        import: "https://raw.githubusercontent.com/Pangeli70/apg-lgr/master/mod.ts",
+        libDeps: [eApgDirEntriesIds.uts, eApgDirEntriesIds.rst],
         microservice: "Not available"
     },
 
@@ -238,22 +238,22 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "",
         github: "",
         import: "",
-        libDeps: [],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Not available",
     },
 
-
+    // OK 2023/05/28 -----------------------
     [eApgDirEntriesIds.rst]: {
         id: eApgDirEntriesIds.rst,
         caption: "Apg-Rst",
         title: "Composite results management",
         version: "0.9.7",
         released: "2023/05/13",
-        since: "",
-        library: "Entities useful to manage composite returns from method results that can carry additional informations about processing or errors.",
+        since: "2018/06",
+        library: "Entities useful to manage composite returns from method results that can carry additional informations and payloads about processing or errors.",
         github: "https://github.com/Pangeli70/apg-rst",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-rst/master/mod.ts",
-        libDeps:[],
+        libDeps: [eApgDirEntriesIds.uts],
         microservice: "Not available",
     },
 
@@ -268,7 +268,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Entities like points and lines that can be used for 2D operations",
         github: "https://github.com/Pangeli70/apg-a2d",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-a2d/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Not available",
     },
 
@@ -283,7 +283,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Entities that allows to manage authentication through JWT API, and authorization to resources via users and roles management",
         github: "https://github.com/Pangeli70/apg-ath",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-ath/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Not available",
     },
 
@@ -297,7 +297,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "A series of entities for creation and storage of AJV validation functions",
         github: "https://github.com/Pangeli70/apg-jsv",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-jsv/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Presents a series of pages to browse the stored schemas, and an API to perform remote validation",
         localPort: JSV_LOCAL_PORT,
         deploy: "https://apg-cii.deno.jsv/",
@@ -315,7 +315,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Entities to collect statistics about Sisal-Superenalotto gambling",
         github: "https://github.com/Pangeli70/apg-sel",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-sel/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Present a series of pages to browse the statistics collected from the official site",
         localPort: SEL_LOCAL_PORT,
         deploy: "https://apg-sel.deno.dev/",
@@ -333,7 +333,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "A parser and interpreter of methematic operations and complex calculations",
         github: "https://github.com/Pangeli70/apg-rpn",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-rpn/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Presents a series of pages to explain how the calculator works",
         localPort: RPN_LOCAL_PORT,
         deploy: "https://apg-rpn.deno.dev/",
@@ -351,7 +351,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Entities to produce programmatically GLTF files on the server and deliver them to a browser",
         github: "https://github.com/Pangeli70/apg-wgl",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-wgl/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "",
         localPort: WGL_LOCAL_PORT,
         deploy: "https://apg-wgl.deno.dev/",
@@ -369,7 +369,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Entities that allow to manage the explosion of a parametric multilevel bill of materials",
         github: "https://github.com/Pangeli70/apg-bom",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-bom/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "Not yet available",
         localPort: BOM_LOCAL_PORT,
         deploy: "https://apg-bom.deno.dev/",
@@ -387,7 +387,7 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         library: "Entities that allow to perform various types of regression analysis of series of data",
         github: "https://github.com/Pangeli70/apg-rgr",
         import: "https://raw.githubusercontent.com/Pangeli70/apg-rgr/master/mod.ts",
-        libDeps:[],
+        libDeps: [],
         microservice: "",
         localPort: RGR_LOCAL_PORT,
         deploy: "https://apg-rgr.deno.dev/",
