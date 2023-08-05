@@ -8,13 +8,15 @@ import { Edr } from "./deps.ts";
 
 import { ApgDirHomeResource } from "./resources/ApgDirHomeResource.ts";
 import { ApgDirMarkdownResource } from "./resources/ApgDirMarkdownResource.ts";
+import { ApgDirUpdateResource } from "./resources/ApgDirUpdateResource.ts";
 
 
 export const ApgDirResources: typeof Edr.Drash.Resource[] = [
 
     // Dir
     ApgDirHomeResource,
-    ApgDirMarkdownResource
+    ApgDirMarkdownResource,
+    ApgDirUpdateResource
 
 ];
 

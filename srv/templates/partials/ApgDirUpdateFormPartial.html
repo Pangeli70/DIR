@@ -1,0 +1,62 @@
+<form id="update" method="post" action="/update">
+
+    <label for="id">Id</label>
+    <select id="id" name="id">
+        <option value="">...</option>
+    </select>
+
+    <label for="caption">Caption</label>
+    <input type="text" id="caption" name="caption" value="<% item %>">
+
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" value="<% item %>">
+
+    <label for="subTitle">Sub title</label>
+    <textarea id="subTitle" name="subTitle"><% item %></textarea>
+
+    <label for="version">Version</label>
+    <input type="text" id="version" name="version" value="<% item %>">
+
+    <label for="released">Released</label>
+    <input type="text" id="released" name="released" value="<% item %>">
+
+    <label for="since">Since</label>
+    <input type="text" id="since" name="since" value="<% item %>">
+
+    <details>
+        <summary>Library</summary>
+
+        <label for="library">Description</label>
+        <textarea id="library" name="library"><% item %></textarea>
+
+        <label for="github">Github</label>
+        <input type="text" id="github" name="github" value="<% item %>">
+
+        <label for="import">Import</label>
+        <input type="text" id="import" name="import" value="<% item %>">
+
+        <label for="libDeps">Dependencies</label>
+        <input type="text" id="libDeps" name="libDeps" value="<% item %>">
+    </details>
+
+    <details>
+        <summary>Service</summary>
+
+        <label for="microservice">Library</label>
+        <textarea id="microservice" name="microservice"><% item %></textarea>
+
+        <label for="localPort">Local Port</label>
+        <input type="text" id="localPort" name="localPort" value="<% item %>">
+
+        <label for="deploy">Deploy</label>
+        <input type="text" id="deploy" name="deploy" value="<% item %>">
+
+        <label for="srvDeps">Dependencies</label>
+        <input type="text" id="srvDeps" name="srvDeps" value="<% item %>">
+
+    </details>
+
+    <button type="submit">Update</button>
+
+
+</form>

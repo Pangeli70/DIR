@@ -18,7 +18,7 @@ export class ApgDirMarkdownResource extends Edr.Drash.Resource {
         const entry = rawEntry.toLowerCase().split("-")[1] as Dir.eApgDirEntriesIds;
         const isValidEntry = Uts.ApgUtsEnum.StringContains(Dir.eApgDirEntriesIds, entry);
         const markdown = !isValidEntry ?
-            `*ApgDir/2345*: the submitted entry [${rawEntry}] was not found ` :
+            `The submitted entry [${rawEntry}] was not found ` :
             Dir.ApgDirMarkdownMaker.Convert(Dir.ApgDirEntries, entry);
 
         response.text(markdown);
