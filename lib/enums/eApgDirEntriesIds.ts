@@ -8,31 +8,33 @@
 
 
 /** Identification of the modules or microservices */
-export enum eApgDirEntriesIds { 
-    uts = "uts",
-    dir = "dir",
-    edr = "edr",
-    cdn = "cdn",
-    tng = "tng",
-    tst = "tst",
-    cad = "cad",
-    cii = "cii",
-    ath = "ath",
-    rst = "rst",
-    maa = "maa",
-    mng = "mng",
-    lgr = "lgr",
-    jsv = "jsv",
-    dhe = "dhe",
-    a2d = "a2d",
-    svg = "svg",
-    sel = "sel",
-    rpn = "rpn",
-    bom = "bom",
-    rgr = "rgr",
-    wgl = "wgl",
-    doc = "doc",
-    mus = "mus",
-
+export enum eApgDirEntriesIds {
+    uts = "uts", // Utilities
+    dir = "dir", // Directory
+    edr = "edr", // Enhanced Drash Resources
+    cdn = "cdn", // Content Delivery Network
+    tng = "tng", // Template engine HTML Server Side rendering
+    tst = "tst", // Test services
+    cad = "cad", // Server side CAD
+    cii = "cii", // CAD Instructions Interpreter
+    ath = "ath", // Autorizations
+    rst = "rst", // Results
+    maa = "maa", // Mongo Atlas
+    mng = "mng", // Mongo utils
+    lgr = "lgr", // Logger utils
+    jsv = "jsv", // Json schema validation
+    dhe = "dhe", // Dynamic Html
+    a2d = "a2d", // 2D maths
+    svg = "svg", // Svg Server Side rendering
+    sel = "sel", // Superenalotto 
+    rpn = "rpn", // Reverse polish notation
+    bom = "bom", // Bill of materials
+    rgr = "rgr", // Regression tests
+    wgl = "wgl", // THREE tests
+    doc = "doc", // Documents
+    mus = "mus", // Values with measure units
+    rpr = "rpr", // Rapier tests
+    tad = "tad", // Text Adventures
+    var = "var", // Games Variations
 }
 
