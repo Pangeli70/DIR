@@ -25,6 +25,8 @@ const WGL_LOCAL_PORT = 4429;
 const BOM_LOCAL_PORT = 7362;
 const RGR_LOCAL_PORT = 7533;
 const DOC_LOCAL_PORT = 6789;
+const RPR_LOCAL_PORT = 5689;
+const VAR_LOCAL_PORT = 7789;
 
 
 /** 
@@ -440,5 +442,53 @@ export const ApgDirEntries: Record<eApgDirEntriesIds, IApgDirEntry> = {
         import: "",
         libDeps: [],
         microservice: "Not available",
+    },
+
+    [eApgDirEntriesIds.rpr]: {
+        id: eApgDirEntriesIds.rpr,
+        caption: "Apg-Rpr",
+        title: "Rapier Physics engine tests",
+        version: "0.9.8",
+        released: "20230815",
+        since: "20230915",
+        library: "Manage rapier in the browser.",
+        github: "",
+        import: "",
+        libDeps: [eApgDirEntriesIds.uts],
+        microservice: "Produces a minimal website to serve the pages and assets of the tests",
+        localPort: RPR_LOCAL_PORT,
+        deploy: "https://apg-rpr.deno.dev/",
+        srvDeps: [eApgDirEntriesIds.edr, eApgDirEntriesIds.tng],
+    },
+
+    [eApgDirEntriesIds.tad]: {
+        id: eApgDirEntriesIds.tad,
+        caption: "Apg-Tad",
+        title: "Text adventure engine",
+        version: "0.9.8",
+        released: "20230815",
+        since: "20230915",
+        library: "Manage text adventures in the browser.",
+        github: "",
+        import: "",
+        libDeps: [],
+        microservice: "Not available",
+    },
+
+    [eApgDirEntriesIds.var]: {
+        id: eApgDirEntriesIds.var,
+        caption: "Apg-Var",
+        title: "Variations Games",
+        version: "0.9.8",
+        released: "20230815",
+        since: "20230915",
+        library: "Variations Games in the browser.",
+        github: "",
+        import: "",
+        libDeps: [eApgDirEntriesIds.uts],
+        microservice: "Produces a minimal website to serve the pages and assets of the game",
+        localPort: VAR_LOCAL_PORT,
+        deploy: "https://apg-var.deno.dev/",
+        srvDeps: [eApgDirEntriesIds.edr, eApgDirEntriesIds.tng],
     },
 }
